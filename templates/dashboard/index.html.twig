@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Barcode!{% endblock %}
+
+{% block body %}
+
+    <div>
+        {{ form_start(form) }}
+        {{ form_end(form) }}
+    </div>
+
+    {% if barcode is defined and barcode is not null %}
+        <div>
+            <img src="{{ path('app_dashboard_barcode_img', {'filename': barcode}) }}" alt="barcode">
+        </div>
+    {% endif %}
+{% endblock %}
